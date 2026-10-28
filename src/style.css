@@ -1,14 +1,16 @@
 /* Ledger design system tokens: https://claude.ai/artifact/KCXoSpkY5EReq32h56aGwW */
 :root {
-  --surface: #f6f8f9;
+  --brand-navy: #102371;
+  --on-navy: #ffffff;
+  --surface: #f5f6fb;
   --panel: #ffffff;
-  --panel-alt: #eef2f4;
-  --ink: #14202a;
-  --ink-muted: #566673;
-  --rule: #d8e0e4;
-  --accent: #0f6e7a;
+  --panel-alt: #eceef7;
+  --ink: #0f1636;
+  --ink-muted: #545b7a;
+  --rule: #d9dcea;
+  --accent: #2228ad;
   --accent-ink: #ffffff;
-  --accent-tint: #e2f1f2;
+  --accent-tint: #e7e8fb;
   --favourable: #1d6b52;
   --favourable-tint: #e3f2ea;
   --adverse: #b04a0c;
@@ -35,19 +37,19 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --surface: #0e1719;
-    --panel: #152124;
-    --panel-alt: #1b2a2e;
-    --ink: #e6eef0;
-    --ink-muted: #93a5ab;
-    --rule: #26363b;
-    --accent: #4fc1cc;
-    --accent-ink: #0e1719;
-    --accent-tint: #163538;
+    --surface: #0b1233;
+    --panel: #111a42;
+    --panel-alt: #18234f;
+    --ink: #e8eaf6;
+    --ink-muted: #9aa3c7;
+    --rule: #26315f;
+    --accent: #9aa0ff;
+    --accent-ink: #0b1233;
+    --accent-tint: #1d2560;
     --favourable: #5cc79e;
-    --favourable-tint: #173329;
+    --favourable-tint: #14302a;
     --adverse: #f0965a;
-    --adverse-tint: #3a2416;
+    --adverse-tint: #35231d;
   }
 }
 
@@ -94,6 +96,10 @@ p {
 }
 
 .header {
+  background: var(--brand-navy);
+  color: var(--on-navy);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-4);
@@ -250,4 +256,20 @@ tr.total td {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr));
   gap: var(--space-6);
+}
+
+.header .label,
+.header .muted {
+  color: var(--on-navy);
+  opacity: 0.8;
+}
+.header .btn:not(.primary) {
+  background: transparent;
+  color: var(--on-navy);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.header .btn.primary {
+  background: var(--on-navy);
+  border-color: var(--on-navy);
+  color: var(--brand-navy);
 }
